@@ -1,14 +1,18 @@
 #include<stdio.h>
 void main()
 {
-int i,j,n;
-void input()
+int n;
+input(&n);
+print_triangle(n);
+
+}
+void input(int *n)
 {
   printf("enter the number of rows\n");
-  scanf("%d",&n);
+  scanf("%d",n);
 }
-void print_triangle()
-{
+void print_triangle(int n)
+{int i,j;
 for(i=1;i<=n;i++)
 {
    for(j=i;j<n;j++)
@@ -22,7 +26,5 @@ for(i=1;i<=n;i++)
    printf("\n");
 } 
 }
-input();
-print_triangle();
 
-}
+
