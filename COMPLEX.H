@@ -58,5 +58,5 @@ main ()
   double complex z1, z2;
   input (&a, &b, &c);
   compute (&z1, &z2, &d, a, b, c);
-  output (z1, z2, d, a, b, c)
+  output (z1, z2, d, a, b, c);
 }
