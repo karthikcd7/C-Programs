@@ -1,6 +1,6 @@
 #include<stdio.h>
 void
-input (int *n, int a[])
+input (int *n, int a[*n])
 {
   int i;
   printf ("enter the size of the array\n");
@@ -14,7 +14,7 @@ input (int *n, int a[])
 }
 
 void
-output (int a[], int n)
+output (int n,int a[n])
 {
   int i;
   printf ("the array after sorting is:\n");
@@ -25,13 +25,13 @@ output (int a[], int n)
 }
 
 void
-swap (int a[], int n)
+swap (int n,int a[n])
 {
   int temp, i, j, flag;
-  for (i = 0; i < n; i++)
+  for (i = 0; i <n-1; i++)
     {
       flag = 0;
-      for (j = 0; j < n - i; j++)
+      for (j = 0; j <n - i-1; j++)
 	{
 	  if (a[j] > a[j + 1])
 	    {
@@ -56,6 +56,6 @@ main ()
 
   int n, a[10];
   input (&n, a);
-  swap (a, n);
-  output (a, n);
+  swap (n,a);
+  output ( n,a);
 }
