@@ -1,55 +1,54 @@
 #include<stdio.h>
-void
-input (int *r1, int *c1, int *r2, int *c2, int a[*r1][*c1], int b[*r2][*c2])
+void input(int *r1,int *c1, int *r2, int *c2,int a[100][100],int b[100][100])
 {
-  int i, j, k, l;
-  printf ("enter the number of rows and columns of matrix 1: ");
-  scanf ("%d%d", r1, c1);
-  printf ("enter the elements of matrix 1:");
-  for (i = 0; i < *r1; i++)
+    int i,j;
+    printf("enter the number of rows and columns:");
+    scanf("%d%d",r1,c1);
+    printf("enter the elements of matrix1:");
+    for(i=0;i<*r1;i++)
     {
-      for (j = 0; j < *c1; j++)
-	{
-	  scanf ("%d", &a[i][j]);
-	}
+        for(j=0;j<*c1;j++)
+        {
+            scanf("%d",&a[i][j]);
+            
+        }
     }
-  printf ("enter the number of rows and columns of matrix 2: ");
-  scanf ("%d%d", r2, c2);
-  printf ("enter the elements of matrix 2:");
-  for (k = 0; k < *r2; k++)
+    printf("enter the number of rows and columns:");
+    scanf("%d%d",r2,c2);
+    printf("enter the elements of matrix1:");
+    for(i=0;i<*r2;i++)
     {
-      for (l = 0; l < *c2; l++)
-	{
-	  scanf ("%d", &b[k][l]);
-	}
+        for(j=0;j<*c2;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
     }
+    
 }
-
-void
-compute (int r1, int c1, int r2, int c2, int a[r1][c1], int b[r2][c2],
-	 int product[r1][c2])
+void compute (int r1, int c1, int r2, int c2, int a[100][100], int b[100][100],int product[100][100])
 {
   int i, j, k, sum = 0;
   if (c1 == r2)
     {
       for (i = 0; i < r1; i++)
-	{
+	  {
 	  for (j = 0; j < c2; j++)
 	    {
 	      for (k = 0; k < r2; k++)
-		{
-		  sum = sum + a[i][k] * b[k][j];
-		}
+		  {
+		        sum = sum + a[i][k] * b[k][j];
+		        
+		  }
 	      product[i][j] = sum;
-	      sum = 0;
+	      sum=0;
+	      
 	    }
-	}
+	  }
     }
 }
 
 
-void
-output (int r1, int c1, int r2, int c2, int product[r1][c2])
+void output (int r1, int c1, int r2, int c2, int product[100][100])
 {
   int i, j;
   for (i = 0; i < r1; i++)
@@ -63,13 +62,10 @@ output (int r1, int c1, int r2, int c2, int product[r1][c2])
 
 }
 
-void
-main ()
+void main ()
 {
   int r1, c1, r2, c2, a[100][100], b[100][100], product[100][100];
   input (&r1, &c1, &r2, &c2, a, b);
   compute (r1, c1, r2, c2, a, b, product);
-  output (r1, c1, r2, c2, a);
+  output (r1, c1, r2, c2, product);
 }
-
-
