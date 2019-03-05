@@ -1,0 +1,34 @@
+#include <stdio.h>
+void input(int *n)
+{
+	printf("enter the number");
+	scanf("%d",n);
+}
+void compute_output(int n)
+{
+	int i,j,fact;
+	for(i=1;i<=n;i++)
+	{
+		fact=0;
+		for(j=1;j<=n;j++)
+		{
+			if(i%j==0)
+			{
+				fact++;
+			}
+		}
+			if(fact==2)
+			{
+				printf("%d \n",i);
+			}
+		
+	}
+
+}
+void main()
+{
+	int n;
+	input(&n);
+	compute_output(n);
+	
+}
