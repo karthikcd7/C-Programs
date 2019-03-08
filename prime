@@ -1,12 +1,13 @@
 #include <stdio.h>
 void input(int *n)
 {
-	printf("enter the number");
+	printf("enter the number\n");
 	scanf("%d",n);
 }
-void compute_output(int n)
+void compute(int n,int *m,int a[n])
 {
-	int i,j,fact;
+	int i,j,k=0,fact;
+
 	for(i=2;i<=n;i++)
 	{
 		fact=1;
@@ -19,16 +20,26 @@ void compute_output(int n)
 		}
 			if(fact==1)
 			{
-				printf("%d \n",i);
+					a[k]=i;
+					k++;		
 			}
-		
 	}
-
+	*m=k;
 }
+void output(int m,int a[m])
+{
+	int i;
+	for(i=0;i<m;i++)
+	{
+		printf("%d\n",a[i]);
+	}
+}
+
 void main()
 {
-	int n;
+	int n,m,a[100];
 	input(&n);
-	compute_output(n);
+	compute(n,&m,a);
+	output(m,a);
 	
 }
