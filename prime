@@ -20,8 +20,8 @@ void compute(int n,int *m,int a[n])
 		}
 			if(fact==1)
 			{
-					a[k]=i;
-					k++;		
+				a[k]=i;
+				k++;		
 			}
 	}
 	*m=k;
